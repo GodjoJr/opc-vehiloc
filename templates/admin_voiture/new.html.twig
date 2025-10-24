@@ -5,8 +5,34 @@
 {% endblock %}
 
 {% block body %}
+<section id="add">
+    <a href="index.html">← Retour</a>
+    <h1>Ajouter une voiture</h1>
     {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button type="submit" class="btn btn-primary">Envoyer</button>
+        <div class="input">
+           {{ form_row(form.nom) }}
+        </div>
+        <div class="input">
+            {{ form_row(form.description) }}
+        </div>
+        <div class="flex-input">
+            <div class="input">
+                {{ form_row(form.prix_quotidien) }}
+            </div>
+            <div class="input">
+            {{ form_row(form.prix_mensuel) }}
+            </div>
+        </div>
+        <div class="flex-input">
+            <div class="input">
+                {{ form_row(form.places) }}
+            </div>
+            <div class="input">
+                {{ form_row(form.is_manuelle) }}
+            </div>
+        </div>
+        
+        <button class="btn-add">Ajouter</button>
     {{ form_end(form) }}
+</section>
 {% endblock %}
